@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textResult.textColor = .white
         textResult.text="0"
+        
     }
     
     
@@ -112,9 +114,7 @@ class ViewController: UIViewController {
             }
             contDecimal = 1
         }
-        
     }
-    
     
     
     //Operaciones
@@ -179,8 +179,14 @@ class ViewController: UIViewController {
             let solution = first * second
             textResult.text = String(solution)
         }else if signo == "Division" {
-            let solution = first / second
-            textResult.text = String(solution)
+            if secondNumber != 0 {
+                let solution = first / second
+                textResult.text = String(solution)
+            } else {
+                textResult.text = "No se puede dividir"
+                firstNumber = 0
+                secondNumber = 0
+            }
         }
     }
 }
