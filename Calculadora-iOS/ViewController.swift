@@ -183,7 +183,7 @@ class ViewController: UIViewController {
                 let solution = first / second
                 textResult.text = String(solution)
             } else {
-                textResult.text = "No se puede dividir"
+                textResult.text = "No se puede dividir entre cero"
                 firstNumber = 0
                 secondNumber = 0
             }
